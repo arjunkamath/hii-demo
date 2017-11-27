@@ -6,6 +6,10 @@
 	margin-left: 150px;
 }
 
+.smallMarginLeft {
+	margin-left: 25px;
+}
+
 .panel-heading .accordion-toggle:after {
     /* symbol for "opening" panels */
     font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */

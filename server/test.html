@@ -18,7 +18,7 @@
 	<body>
 		<div class="row">
 			<div class="col-sm-11 col-sm-offset-1 ">
-				<h1>HII ACTIVE Demo</h1>
+				<h1 class="smallMarginLeft">HII ACTIVE Demo</h1>
 			</div>
 		</div>
 		<div class="row">
@@ -26,7 +26,7 @@
 
 
 			<div class="col-md-5 col-md-offset-1 col-sm-11 col-sm-offset-1">
-				<h2>Tool usage</h2>
+				<h2 class="smallMarginLeft">Tool usage</h2>
 
 				<div class="panel-group" id="accordion">
 
@@ -41,10 +41,10 @@
           	<div id="collapse1" class="panel-collapse collapse in">
         			<div class="panel-body">
         				<div class="row marginTop" >
-        					<div class="col-md-5 col-md-offset-1 col-sm-11 col-sm-offset-1">
+        					<div class="col-sm-11 col-sm-offset-1">
 										<div id="tool1"></div>
-										<button class="btn btn-default pull-right" id="tool1-prev">prev</button>
-										<button class="btn btn-default pull-right" id="tool1-next">next</button>
+										<button class="btn btn-default marginLeft  glyphicon glyphicon-chevron-left" id="tool1-prev"></button>
+										<button class="btn btn-default glyphicon glyphicon-chevron-right" id="tool1-next"></button>
 									</div>
 								</div>
         			</div>
@@ -63,10 +63,10 @@
           	<div id="collapse2" class="panel-collapse collapse in">
         			<div class="panel-body">
         				<div class="row marginTop">
-        					<div class="col-md-5 col-md-offset-1 col-sm-11 col-sm-offset-1">
+        					<div class="col-sm-11 col-sm-offset-1">
 										<div id="tool2"></div>
-										<button class="btn btn-default pull-right" id="tool2-prev">prev</button>
-										<button class="btn btn-default pull-right" id="tool2-next">next</button>
+										<button class="btn btn-default marginLeft  glyphicon glyphicon-chevron-left" id="tool2-prev"></button>
+										<button class="btn btn-default glyphicon glyphicon-chevron-right" id="tool2-next"></button>
 									</div>
 								</div>
         			</div>
@@ -84,10 +84,10 @@
           	<div id="collapse3" class="panel-collapse collapse in">
         			<div class="panel-body">
         				<div class="row marginTop">
-        					<div class="col-md-5 col-md-offset-1 col-sm-11 col-sm-offset-1">
+        					<div class="col-sm-11 col-sm-offset-1">
 										<div id="tool3"></div>
-										<button class="btn btn-default pull-right" id="tool3-prev">prev</button>
-										<button class="btn btn-default pull-right" id="tool3-next">next</button>
+										<button class="btn btn-default marginLeft  glyphicon glyphicon-chevron-left" id="tool3-prev"></button>
+										<button class="btn btn-default glyphicon glyphicon-chevron-right" id="tool3-next"></button>
 									</div>
 								</div>
         			</div>
@@ -105,10 +105,10 @@
           	<div id="collapse4" class="panel-collapse collapse in">
         			<div class="panel-body">
         				<div class="row marginTop">
-        					<div class="col-md-5 col-md-offset-1 col-sm-11 col-sm-offset-1">
+        					<div class="col-sm-11 col-sm-offset-1">
 										<div id="tool4"></div>
-										<button class="btn btn-default pull-right" id="tool4-prev">prev</button>
-										<button class="btn btn-default pull-right" id="tool4-next">next</button>
+										<button class="btn btn-default marginLeft  glyphicon glyphicon-chevron-left" id="tool4-prev"></button>
+										<button class="btn btn-default glyphicon glyphicon-chevron-right" id="tool4-next"></button>
 									</div>
 								</div>
         			</div>
@@ -121,7 +121,7 @@
 
 			<div class="col-md-5 col-sm-11">
 
-				<h2>Overall usage</h2>
+				<h2 class="smallMarginLeft">Overall usage</h2>
 
 				<div class="panel panel-default">
 					<div class="panel-heading">
@@ -131,10 +131,10 @@
         	</div>
     			<div class="panel-body">
     				<div class="row marginTop">
-    					<div class="col-md-10 col-md-offset-2 col-sm-11 col-sm-offset-1">
+    					<div class="col-sm-11 col-sm-offset-1">
 								<div id="overall"></div>
-									<button class="btn btn-default marginLeft" id="overall-prev">prev</button>
-									<button class="btn btn-default" id="overall-next">next</button>
+									<button class="btn btn-default marginLeft glyphicon glyphicon-chevron-left" id="overall-prev"></button>
+									<button class="btn btn-default glyphicon glyphicon-chevron-right" id="overall-next"></button>
 							</div>
 						</div>
     			</div>
@@ -157,13 +157,19 @@
 				start: new Date(2017, 10, 26, 8),
 				domain: "month",
 				subDomain: "x_day",
-				cellSize: 20,
+				cellSize: 25,
 				subDomainTextFormat: "%d",
 				domainGutter: 10,
 				data: "./tool1_dummy_vals.json",
 				previousSelector: "#tool1-prev",
 				nextSelector: "#tool1-next",
-				legend: [20, 40, 60, 80]
+				legend: [20, 40, 60, 80],
+				legendVerticalPosition: "center",
+				legendHorizontalPosition: "left",
+				legendOrientation: "vertical",
+				legendMargin: [10, 30, 0, 0],
+				legendCellSize: 20,
+				legendColors: ["#efefef", "steelblue"]
 			});
 
 			cal2.init({
@@ -172,13 +178,19 @@
 				start: new Date(2017, 10, 26, 8),
 				domain: "month",
 				subDomain: "x_day",
-				cellSize: 20,
+				cellSize: 25,
 				subDomainTextFormat: "%d",
 				domainGutter: 10,
 				data: "./tool2_dummy_vals.json",
 				previousSelector: "#tool2-prev",
 				nextSelector: "#tool2-next",
-				legend: [20, 40, 60, 80]
+				legend: [20, 40, 60, 80],
+				legendVerticalPosition: "center",
+				legendHorizontalPosition: "left",
+				legendOrientation: "vertical",
+				legendMargin: [10, 30, 0, 0],
+				legendCellSize: 20,
+				legendColors: ["#efefef", "steelblue"]
 			});
 
 			cal3.init({
@@ -187,13 +199,19 @@
 				start: new Date(2017, 10, 26, 8),
 				domain: "month",
 				subDomain: "x_day",
-				cellSize: 20,
+				cellSize: 25,
 				subDomainTextFormat: "%d",
 				domainGutter: 10,
 				data: "./tool3_dummy_vals.json",
 				previousSelector: "#tool3-prev",
 				nextSelector: "#tool3-next",
-				legend: [20, 40, 60, 80]
+				legend: [20, 40, 60, 80],
+				legendVerticalPosition: "center",
+				legendHorizontalPosition: "left",
+				legendOrientation: "vertical",
+				legendMargin: [10, 30, 0, 0],
+				legendCellSize: 20,
+				legendColors: ["#efefef", "steelblue"]
 			});
 
 			cal4.init({
@@ -202,13 +220,19 @@
 				start: new Date(2017, 10, 26, 8),
 				domain: "month",
 				subDomain: "x_day",
-				cellSize: 20,
+				cellSize: 25,
 				subDomainTextFormat: "%d",
 				domainGutter: 10,
 				data: "./tool4_dummy_vals.json",
 				previousSelector: "#tool4-prev",
 				nextSelector: "#tool4-next",
-				legend: [20, 40, 60, 80]
+				legend: [20, 40, 60, 80],
+				legendVerticalPosition: "center",
+				legendHorizontalPosition: "left",
+				legendOrientation: "vertical",
+				legendMargin: [10, 30, 0, 0],
+				legendCellSize: 20,
+				legendColors: ["#efefef", "steelblue"]
 			});
 
 			overall.init({
@@ -217,14 +241,31 @@
 				start: new Date(2017, 10, 26, 8),
 				domain: "month",
 				subDomain: "x_day",
-				cellSize: 20,
+				cellSize: 35,
 				subDomainTextFormat: "%d",
 				domainGutter: 10,
 				data: "./overall_dummy_vals.json",
 				previousSelector: "#overall-prev",
 				nextSelector: "#overall-next",
-				legend: [20, 40, 60, 80]
+				legend: [20, 40, 60, 80],
+				legendVerticalPosition: "center",
+				legendHorizontalPosition: "left",
+				legendOrientation: "vertical",
+				legendMargin: [10, 30, 0, 0],
+				legendCellSize: 20
 			});
+
+			// cal1.legendVerticalPosition: "center";
+			// cal1.legendHorizontalPosition: "right";
+			// cal1.legendOrientation: "vertical";
+
+			// // cal1.legendVerticalPosition: "center";
+			// // cal1.legendHorizontalPosition: "left";
+			// // cal1.legendOrientation: "vertical";
+			// // cal1.legendMargin: [10, 0, 0, 0];
+			// // cal1.legendCellSize: 20;
+
+			// cal1.setLegend();
 
 		</script>
 
