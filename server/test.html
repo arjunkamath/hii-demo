@@ -10,27 +10,26 @@
 		<link rel="stylesheet" href="http://cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.css" />
 	</head>
 	<body>
-	<div id="cal-heatmap"></div>
-	<button id="demo-prev">prev</button>
-	<button id="demo-next">next</button>
-<script type="text/javascript">
-	var cal = new CalHeatMap();
+		<div id="cal-heatmap"></div>
+		<button id="demo-prev">prev</button>
+		<button id="demo-next">next</button>
+		<script type="text/javascript">
+			var cal = new CalHeatMap();
 
+			cal.init({
+				range: 20,
+				start: new Date(2000, 0, 1, 1),
+				domain: "month",
+				subDomain: "x_day",
+				cellSize: 20,
+				subDomainTextFormat: "%d",
+				domainGutter: 10,
+				data: "./datas-hours.json",
+				previousSelector: "#demo-prev",
+				nextSelector: "#demo-next",
+			});
 
-	cal.init({
-			range: 20,
-			start: new Date(2000, 0, 1, 1),
-			domain: "week",
-			subDomain: "hour",
-			cellSize: 20,
-			subDomainTextFormat: "%d",
-			domainGutter: 10,
-			data: "http://127.0.0.1:8000/data/datas-hours.json",
-			previousSelector: "#demo-prev",
-			nextSelector: "#demo-next",
-
-		});
-</script>
+		</script>
 
 	</body>
 </html>
