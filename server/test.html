@@ -8,25 +8,90 @@
 	  <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js"></script>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="custom.css" />
+
 	</head>
 	<body>
-		<div id="cal-heatmap"></div>
-		<button id="demo-prev">prev</button>
-		<button id="demo-next">next</button>
-		<script type="text/javascript">
-			var cal = new CalHeatMap();
+		<div class="row">
+			<div class="col-sm-11 col-sm-offset-1 ">
+				<h1>HII ACTIVE Demo</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5 col-sm-offset-1 ">
+				<h2>Tool usage</h2>
+				<div class="row marginTop" >
+					<div id="tool1"></div>
+					<button class="btn btn-default marginLeft" id="tool1-prev">prev</button>
+					<button class="btn btn-default" id="tool1-next">next</button>
+				</div>
+				<div class="row marginTop">
+					<div id="tool2"></div>
+					<button class="btn btn-default marginLeft" id="tool2-prev">prev</button>
+					<button class="btn btn-default" id="tool2-next">next</button>
+				</div>
+			</div>
+			<div class="col-sm-5 ">
+				<h2>Overall usage</h2>
+				<div class="row marginTop" >
+					<div id="overall"></div>
+					<button class="btn btn-default marginLeft" id="overall-prev">prev</button>
+					<button class="btn btn-default" id="overall-next">next</button>
+				</div>
+			</div>
 
-			cal.init({
-				range: 5,
+		</div>
+
+
+		<script type="text/javascript">
+			var cal1 = new CalHeatMap();
+			var cal2 = new CalHeatMap();
+			var overall = new CalHeatMap();
+
+			cal1.init({
+				itemSelector: "#tool1",
+				range: 2,
 				start: new Date(2017, 10, 26, 8),
 				domain: "month",
 				subDomain: "x_day",
 				cellSize: 20,
 				subDomainTextFormat: "%d",
 				domainGutter: 10,
-				data: "./dummy_vals.json",
-				previousSelector: "#demo-prev",
-				nextSelector: "#demo-next",
+				data: "./tool1_dummy_vals.json",
+				previousSelector: "#tool1-prev",
+				nextSelector: "#tool1-next",
+				legend: [20, 40, 60, 80]
+			});
+
+			cal2.init({
+				itemSelector: "#tool2",
+				range: 2,
+				start: new Date(2017, 10, 26, 8),
+				domain: "month",
+				subDomain: "x_day",
+				cellSize: 20,
+				subDomainTextFormat: "%d",
+				domainGutter: 10,
+				data: "./tool2_dummy_vals.json",
+				previousSelector: "#tool2-prev",
+				nextSelector: "#tool2-next",
+				legend: [20, 40, 60, 80]
+			});
+
+			overall.init({
+				itemSelector: "#overall",
+				range: 2,
+				start: new Date(2017, 10, 26, 8),
+				domain: "month",
+				subDomain: "x_day",
+				cellSize: 20,
+				subDomainTextFormat: "%d",
+				domainGutter: 10,
+				data: "./overall_dummy_vals.json",
+				previousSelector: "#overall-prev",
+				nextSelector: "#overall-next",
 				legend: [20, 40, 60, 80]
 			});
 
@@ -34,3 +99,9 @@
 
 	</body>
 </html>
+
+
+
+
+
+
