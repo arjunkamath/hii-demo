@@ -33,13 +33,12 @@
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<h4 class="panel-title">
-								<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+								<a data-toggle="collapse" class="accordion-toggle" data-parent="#accordion" href="#collapse1">
             			<span class="glyphicon glyphicon-wrench text-success"></span> Machine A
-            			<span class="glyphicon glyphicon-chevron-up pull-right"></span>
           			</a>
           		</h4>
           	</div>
-          	<div id="collapseOne" class="panel-collapse collapse in">
+          	<div id="collapse1" class="panel-collapse collapse in">
         			<div class="panel-body">
         				<div class="row marginTop" >
         					<div class="col-md-5 col-md-offset-1 col-sm-11 col-sm-offset-1">
@@ -56,19 +55,60 @@
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<h4 class="panel-title">
-								<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
             			<span class="glyphicon glyphicon-wrench text-success"></span> Machine B
-            			<span class="glyphicon glyphicon-chevron-up pull-right"></span>
           			</a>
           		</h4>
           	</div>
-          	<div id="collapseTwo" class="panel-collapse collapse in">
+          	<div id="collapse2" class="panel-collapse collapse in">
         			<div class="panel-body">
         				<div class="row marginTop">
         					<div class="col-md-5 col-md-offset-1 col-sm-11 col-sm-offset-1">
 										<div id="tool2"></div>
 										<button class="btn btn-default pull-right" id="tool2-prev">prev</button>
 										<button class="btn btn-default pull-right" id="tool2-next">next</button>
+									</div>
+								</div>
+        			</div>
+      			</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+            			<span class="glyphicon glyphicon-wrench text-success"></span> Machine C
+          			</a>
+          		</h4>
+          	</div>
+          	<div id="collapse3" class="panel-collapse collapse in">
+        			<div class="panel-body">
+        				<div class="row marginTop">
+        					<div class="col-md-5 col-md-offset-1 col-sm-11 col-sm-offset-1">
+										<div id="tool3"></div>
+										<button class="btn btn-default pull-right" id="tool3-prev">prev</button>
+										<button class="btn btn-default pull-right" id="tool3-next">next</button>
+									</div>
+								</div>
+        			</div>
+      			</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+            			<span class="glyphicon glyphicon-wrench text-success"></span> Machine D
+          			</a>
+          		</h4>
+          	</div>
+          	<div id="collapse4" class="panel-collapse collapse in">
+        			<div class="panel-body">
+        				<div class="row marginTop">
+        					<div class="col-md-5 col-md-offset-1 col-sm-11 col-sm-offset-1">
+										<div id="tool4"></div>
+										<button class="btn btn-default pull-right" id="tool4-prev">prev</button>
+										<button class="btn btn-default pull-right" id="tool4-next">next</button>
 									</div>
 								</div>
         			</div>
@@ -94,6 +134,8 @@
 		<script type="text/javascript">
 			var cal1 = new CalHeatMap();
 			var cal2 = new CalHeatMap();
+			var cal3 = new CalHeatMap();
+			var cal4 = new CalHeatMap();
 			var overall = new CalHeatMap();
 
 			cal1.init({
@@ -126,6 +168,36 @@
 				legend: [20, 40, 60, 80]
 			});
 
+			cal3.init({
+				itemSelector: "#tool3",
+				range: 2,
+				start: new Date(2017, 10, 26, 8),
+				domain: "month",
+				subDomain: "x_day",
+				cellSize: 20,
+				subDomainTextFormat: "%d",
+				domainGutter: 10,
+				data: "./tool3_dummy_vals.json",
+				previousSelector: "#tool3-prev",
+				nextSelector: "#tool3-next",
+				legend: [20, 40, 60, 80]
+			});
+
+			cal4.init({
+				itemSelector: "#tool4",
+				range: 2,
+				start: new Date(2017, 10, 26, 8),
+				domain: "month",
+				subDomain: "x_day",
+				cellSize: 20,
+				subDomainTextFormat: "%d",
+				domainGutter: 10,
+				data: "./tool4_dummy_vals.json",
+				previousSelector: "#tool4-prev",
+				nextSelector: "#tool4-next",
+				legend: [20, 40, 60, 80]
+			});
+
 			overall.init({
 				itemSelector: "#overall",
 				range: 2,
@@ -140,22 +212,6 @@
 				nextSelector: "#overall-next",
 				legend: [20, 40, 60, 80]
 			});
-
-			(function($) {
-		    'use strict';
-		    $('#collapseOne, #collapseTwo').on({
-		      'show.bs.collapse': function() {
-		        $('a[href="#' + this.id + '"] span.glyphicons-chevron-up')
-		          .removeClass('glyphicons-chevron-up')
-		          .addClass('glyphicons-chevron-down');
-		      },
-		      'hide.bs.collapse': function() {
-		        $('a[href="#' + this.id + '"] span.glyphicon-chevron-down')
-		          .removeClass('glyphicons-chevron-down')
-		          .addClass('glyphicons-chevron-up');
-		      }
-		    });
-		  })(jQuery);
 
 		</script>
 
