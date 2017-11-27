@@ -17,14 +17,14 @@
 			var cal = new CalHeatMap();
 
 			cal.init({
-				range: 20,
-				start: new Date(2000, 0, 1, 1),
+				range: 2,
+				start: new Date(2017, 10, 26, 8),
 				domain: "month",
 				subDomain: "x_day",
 				cellSize: 20,
 				subDomainTextFormat: "%d",
 				domainGutter: 10,
-				data: "./datas-hours.json",
+				data: "./dummy_vals.json",
 				previousSelector: "#demo-prev",
 				nextSelector: "#demo-next",
 			});
