@@ -17,7 +17,7 @@
 			var cal = new CalHeatMap();
 
 			cal.init({
-				range: 2,
+				range: 5,
 				start: new Date(2017, 10, 26, 8),
 				domain: "month",
 				subDomain: "x_day",
@@ -27,6 +27,7 @@
 				data: "./dummy_vals.json",
 				previousSelector: "#demo-prev",
 				nextSelector: "#demo-next",
+				legend: [20, 40, 60, 80]
 			});
 
 		</script>
