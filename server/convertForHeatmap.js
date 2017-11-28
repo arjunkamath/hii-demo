@@ -28,7 +28,7 @@ fs.readFile('./newRealValues.json', 'utf8', function (err, data) {
 
     result.series[0].values.forEach((value, index) => {
       //console.log('creating machineJson ' + statementId + " " + value[0] + " " + value[1]);
-      mObject[value[0]/1000] = value[1];
+      mObject[value[0]/1000] = (1 - value[1]);
     })
 
     console.log();

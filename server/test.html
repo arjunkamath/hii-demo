@@ -94,7 +94,7 @@
 		      			</div>
 							</div>
 
-							<div class="panel panel-default">
+							<!-- <div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
 										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse4">
@@ -113,7 +113,7 @@
 										</div>
 		        			</div>
 		      			</div>
-							</div>
+							</div> -->
 
 						</div>
 					<!-- </div>
@@ -149,25 +149,25 @@
 			var cal1 = new CalHeatMap();
 			var cal2 = new CalHeatMap();
 			var cal3 = new CalHeatMap();
-			var cal4 = new CalHeatMap();
+			// var cal4 = new CalHeatMap();
 			var overall = new CalHeatMap();
 
-			var machineCellSize = 20;
-			var mLegendArray = [20, 40, 60, 80];
+			var machineCellSize = 25;
+			var mLegendArray = [0.25, 0.5, 0.75, 1.0];
 			var mLegendMargins = [10, 30, 0, 0];
 			var mLegendCells = 20;
 			var startDate= new Date(2017, 10, 26, 8);
 
 			cal1.init({
 				itemSelector: "#tool1",
-				range: 2,
+				range: 1,
 				start: startDate,
 				domain: "month",
 				subDomain: "x_day",
 				cellSize: machineCellSize,
 				subDomainTextFormat: "%d",
 				domainGutter: 10,
-				data: "./tool1_dummy_vals.json",
+				data: "./mach0.json",
 				previousSelector: "#tool1-prev",
 				nextSelector: "#tool1-next",
 				legend: mLegendArray,
@@ -181,14 +181,14 @@
 
 			cal2.init({
 				itemSelector: "#tool2",
-				range: 2,
+				range: 1,
 				start: startDate,
 				domain: "month",
 				subDomain: "x_day",
 				cellSize: machineCellSize,
 				subDomainTextFormat: "%d",
 				domainGutter: 10,
-				data: "./tool2_dummy_vals.json",
+				data: "./mach1.json",
 				previousSelector: "#tool2-prev",
 				nextSelector: "#tool2-next",
 				legend: mLegendArray,
@@ -202,14 +202,14 @@
 
 			cal3.init({
 				itemSelector: "#tool3",
-				range: 2,
+				range: 1,
 				start: startDate,
 				domain: "month",
 				subDomain: "x_day",
 				cellSize: machineCellSize,
 				subDomainTextFormat: "%d",
 				domainGutter: 10,
-				data: "./tool3_dummy_vals.json",
+				data: "./mach2.json",
 				previousSelector: "#tool3-prev",
 				nextSelector: "#tool3-next",
 				legend: mLegendArray,
@@ -221,26 +221,26 @@
 				legendColors: ["#efefef", "steelblue"]
 			});
 
-			cal4.init({
-				itemSelector: "#tool4",
-				range: 2,
-				start: new Date(2017, 10, 26, 8),
-				domain: "month",
-				subDomain: "x_day",
-				cellSize: machineCellSize,
-				subDomainTextFormat: "%d",
-				domainGutter: 10,
-				data: "./tool4_dummy_vals.json",
-				previousSelector: "#tool4-prev",
-				nextSelector: "#tool4-next",
-				legend: mLegendArray,
-				legendVerticalPosition: "center",
-				legendHorizontalPosition: "left",
-				legendOrientation: "vertical",
-				legendMargin: mLegendMargins,
-				legendCellSize: mLegendCells,
-				legendColors: ["#efefef", "steelblue"]
-			});
+			// cal4.init({
+			// 	itemSelector: "#tool4",
+			// 	range: 2,
+			// 	start: new Date(2017, 10, 26, 8),
+			// 	domain: "month",
+			// 	subDomain: "x_day",
+			// 	cellSize: machineCellSize,
+			// 	subDomainTextFormat: "%d",
+			// 	domainGutter: 10,
+			// 	data: "./tool4_dummy_vals.json",
+			// 	previousSelector: "#tool4-prev",
+			// 	nextSelector: "#tool4-next",
+			// 	legend: mLegendArray,
+			// 	legendVerticalPosition: "center",
+			// 	legendHorizontalPosition: "left",
+			// 	legendOrientation: "vertical",
+			// 	legendMargin: mLegendMargins,
+			// 	legendCellSize: mLegendCells,
+			// 	legendColors: ["#efefef", "steelblue"]
+			// });
 
 			overall.init({
 				itemSelector: "#overall",
