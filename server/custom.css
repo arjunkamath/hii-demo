@@ -1,9 +1,13 @@
 .marginTop {
-	margin-top: 25px;
+	/*//margin-top: 25px;*/
 }
 
 .marginLeft {
-	margin-left: 150px;
+	margin-left: 200px;
+}
+
+.marginLeftMore {
+	margin-left: 220px;
 }
 
 .smallMarginLeft {

@@ -34,7 +34,7 @@
 								<div class="panel-heading">
 									<h4 class="panel-title">
 										<a data-toggle="collapse" class="accordion-toggle" data-parent="#accordion" href="#collapse1">
-		            			<span class="glyphicon glyphicon-wrench text-success"></span>  Machine A
+		            			<span class="glyphicon glyphicon-wrench text-success"></span>   Machine A
 		          			</a>
 		          		</h4>
 		          	</div>
@@ -56,7 +56,7 @@
 								<div class="panel-heading">
 									<h4 class="panel-title">
 										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-		            			<span class="glyphicon glyphicon-wrench text-success"></span>  Machine B
+		            			<span class="glyphicon glyphicon-wrench text-success"></span>   Machine B
 		          			</a>
 		          		</h4>
 		          	</div>
@@ -77,7 +77,7 @@
 								<div class="panel-heading">
 									<h4 class="panel-title">
 										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-		            			<span class="glyphicon glyphicon-wrench text-success"></span>  Machine C
+		            			<span class="glyphicon glyphicon-wrench text-success"></span>   Machine C
 		          			</a>
 		          		</h4>
 		          	</div>
@@ -93,36 +93,10 @@
 		        			</div>
 		      			</div>
 							</div>
-
-							<!-- <div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse4">
-		            			<span class="glyphicon glyphicon-wrench text-success"></span>  Machine D
-		          			</a>
-		          		</h4>
-		          	</div>
-		          	<div id="collapse4" class="panel-collapse collapse in">
-		        			<div class="panel-body">
-		        				<div class="row marginTop">
-		        					<div class="col-sm-11 col-sm-offset-1">
-												<div id="tool4"></div>
-												<button class="btn btn-default marginLeft  glyphicon glyphicon-chevron-left" id="tool4-prev"></button>
-												<button class="btn btn-default glyphicon glyphicon-chevron-right" id="tool4-next"></button>
-											</div>
-										</div>
-		        			</div>
-		      			</div>
-							</div> -->
-
 						</div>
-					<!-- </div>
-				</div> -->
-
 			</div>
 
-			<!-- <div class="col-md-5  col-sm-8 col-sm-offset-2"> -->
-				<div class="col-md-5 col-md-offset-0 col-sm-10 col-sm-offset-1">
+			<div class="col-md-5 col-md-offset-0 col-sm-10 col-sm-offset-1">
 
 				<h3 class="smallMarginLeft">Overall usage</h3>
 
@@ -134,7 +108,7 @@
     				<div class="row marginTop">
     					<div class="col-sm-11 col-sm-offset-1">
 								<div id="overall"></div>
-									<button class="btn btn-default marginLeft glyphicon glyphicon-chevron-left" id="overall-prev"></button>
+									<button class="btn btn-default marginLeftMore glyphicon glyphicon-chevron-left" id="overall-prev"></button>
 									<button class="btn btn-default glyphicon glyphicon-chevron-right" id="overall-next"></button>
 							</div>
 						</div>
@@ -149,12 +123,11 @@
 			var cal1 = new CalHeatMap();
 			var cal2 = new CalHeatMap();
 			var cal3 = new CalHeatMap();
-			// var cal4 = new CalHeatMap();
 			var overall = new CalHeatMap();
 
 			var machineCellSize = 25;
 			var mLegendArray = [0.25, 0.5, 0.75, 1.0];
-			var mLegendMargins = [10, 30, 0, 0];
+			var mLegendMargins = [55, 30, 0, 0];
 			var mLegendCells = 20;
 			var startDate= new Date(2017, 10, 26, 8);
 
@@ -176,7 +149,10 @@
 				legendOrientation: "vertical",
 				legendMargin: mLegendMargins,
 				legendCellSize: mLegendCells,
-				legendColors: ["#efefef", "steelblue"]
+				legendColors: ["#efefef", "steelblue"],
+				label: {
+					position: "top"
+				}
 			});
 
 			cal2.init({
@@ -197,7 +173,10 @@
 				legendOrientation: "vertical",
 				legendMargin: mLegendMargins,
 				legendCellSize: mLegendCells,
-				legendColors: ["#efefef", "steelblue"]
+				legendColors: ["#efefef", "steelblue"],
+				label: {
+					position: "top"
+				}
 			});
 
 			cal3.init({
@@ -218,29 +197,11 @@
 				legendOrientation: "vertical",
 				legendMargin: mLegendMargins,
 				legendCellSize: mLegendCells,
-				legendColors: ["#efefef", "steelblue"]
+				legendColors: ["#efefef", "steelblue"],
+				label: {
+					position: "top"
+				}
 			});
-
-			// cal4.init({
-			// 	itemSelector: "#tool4",
-			// 	range: 2,
-			// 	start: new Date(2017, 10, 26, 8),
-			// 	domain: "month",
-			// 	subDomain: "x_day",
-			// 	cellSize: machineCellSize,
-			// 	subDomainTextFormat: "%d",
-			// 	domainGutter: 10,
-			// 	data: "./tool4_dummy_vals.json",
-			// 	previousSelector: "#tool4-prev",
-			// 	nextSelector: "#tool4-next",
-			// 	legend: mLegendArray,
-			// 	legendVerticalPosition: "center",
-			// 	legendHorizontalPosition: "left",
-			// 	legendOrientation: "vertical",
-			// 	legendMargin: mLegendMargins,
-			// 	legendCellSize: mLegendCells,
-			// 	legendColors: ["#efefef", "steelblue"]
-			// });
 
 			overall.init({
 				itemSelector: "#overall",
@@ -248,7 +209,7 @@
 				start: new Date(2017, 10, 26, 8),
 				domain: "month",
 				subDomain: "x_day",
-				cellSize: 40,
+				cellSize: 35,
 				subDomainTextFormat: "%d",
 				domainGutter: 10,
 				data: "./overall_dummy_vals.json",
@@ -258,22 +219,14 @@
 				legendVerticalPosition: "center",
 				legendHorizontalPosition: "left",
 				legendOrientation: "vertical",
-				legendMargin: [10, 30, 0, 0],
-				legendCellSize: 20
+				legendMargin: [55, 30, 0, 0],
+				legendCellSize: 20,
+				label: {
+					position: "top"
+				}
 			});
 
-			// cal1.legendVerticalPosition: "center";
-			// cal1.legendHorizontalPosition: "right";
-			// cal1.legendOrientation: "vertical";
-
-			// // cal1.legendVerticalPosition: "center";
-			// // cal1.legendHorizontalPosition: "left";
-			// // cal1.legendOrientation: "vertical";
-			// // cal1.legendMargin: [10, 0, 0, 0];
-			// // cal1.legendCellSize: 20;
-
-			// cal1.setLegend();
-
+			
 		</script>
 
 	</body>
