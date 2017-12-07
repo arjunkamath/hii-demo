@@ -14,6 +14,10 @@
 	margin-left: 20px;
 }
 
+#dropdownMenu1 {
+		margin-top: 20px;
+}
+
 .panel-heading .accordion-toggle:after {
     /* symbol for "opening" panels */
     font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
