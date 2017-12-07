@@ -1,8 +1,8 @@
 var fs = require('fs');
-var total = {};
-var obj;
+var tobj = {};
+var mobj = {};
 
-fs.readFile('./mach1.json', 'utf8', function (err, data) {
+fs.readFile('./mach2.json', 'utf8', function (err, data) {
   if (err) throw err;
   mobj = JSON.parse(data);
   console.log(mobj);
@@ -20,7 +20,7 @@ fs.readFile('./mach1.json', 'utf8', function (err, data) {
       }
     })
 
-    writeOut(total, './total.json')
+    writeOut(tobj, './total.json')
 
   })
 
