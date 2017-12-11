@@ -2,7 +2,7 @@ var fs = require('fs');
 var tobj = {};
 var mobj = {};
 
-fs.readFile('./mach2.json', 'utf8', function (err, data) {
+fs.readFile('./newMach2.json', 'utf8', function (err, data) {
   if (err) throw err;
   mobj = JSON.parse(data);
   console.log(mobj);
