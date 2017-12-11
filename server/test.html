@@ -148,7 +148,7 @@
 			var overall = new CalHeatMap();
 
 			var machineCellSize = 25;
-			var mLegendArray = [0.25, 0.5, 0.75, 1.0];
+			var mLegendArray = [0, 100, 700, 1600, 2200];
 			var mLegendMargins = [55, 30, 0, 0];
 			var mLegendCells = 20;
 			var startDate= new Date(2017, 10, 26, 8);
@@ -162,7 +162,7 @@
 				cellSize: machineCellSize,
 				subDomainTextFormat: "%d",
 				domainGutter: 10,
-				data: "./mach0.json",
+				data: "./newMach0.json",
 				previousSelector: "#tool1-prev",
 				nextSelector: "#tool1-next",
 				legend: mLegendArray,
@@ -186,7 +186,7 @@
 				cellSize: machineCellSize,
 				subDomainTextFormat: "%d",
 				domainGutter: 10,
-				data: "./mach1.json",
+				data: "./newMach1.json",
 				previousSelector: "#tool2-prev",
 				nextSelector: "#tool2-next",
 				legend: mLegendArray,
@@ -210,7 +210,7 @@
 				cellSize: machineCellSize,
 				subDomainTextFormat: "%d",
 				domainGutter: 10,
-				data: "./mach2.json",
+				data: "./newMach2.json",
 				previousSelector: "#tool3-prev",
 				nextSelector: "#tool3-next",
 				legend: mLegendArray,
